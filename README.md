@@ -2,6 +2,8 @@
 
 Code to run a fully automated youtube that can scrape content, edit a compilation, and upload to youtube daily.
 
+This program is used for the Meme Caviar YouTube Channel (https://www.youtube.com/c/monkeytoad11_or_thejstone2002/)
+
 # Instructions
 
 1. [Download](https://github.com/nathan-149/automated_youtube_channel/archive/main.zip) the Github Repository
