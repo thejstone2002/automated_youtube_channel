@@ -12,16 +12,10 @@ This program is used for the Meme Caviar YouTube Channel (https://www.youtube.co
 
 3. Run `pip install -r requirements.txt`
 
-4. Get setup and create a Project with the Youtube API: https://developers.google.com/youtube/v3/quickstart/python
-Be sure to follow it carefully, as it won't work if you don't do this part right.
-Download your OATH file as "secret.json" in your folder.
+4. Create an instagram account and follow accounts you want to scrape from
 
-5. Run `python3 setup_google.py` and follow the web page that opens up.
+5. Open main.py in a text editor and fill in necessary information
 
-6. Create an instagram account and follow accounts you want to scrape from
+6. Run `python3 main.py`
 
-7. Open main.py in a text editor and fill in necessary information
-
-8. Run `python3 main.py`
-
-9. Enjoy your fully automated youtube channel! :) Note that for uploading public videos, you have to complete an audit for the Youtube API. See the note in the [Google Documentation](https://developers.google.com/youtube/v3/docs/videos/insert)
+7. Enjoy your fully automated meme maker! :) (Note, this does not attempt to upload videos because they are locked as private if the API app has not been audited by YouTube)

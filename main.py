@@ -1,6 +1,5 @@
 from scrape_videos import scrapeVideos
 from make_compilation import makeCompilation
-from upload_ytvid import uploadYtvid
 import schedule
 import time
 import datetime
@@ -11,7 +10,7 @@ import shutil
 IG_USERNAME = "" 
 IG_PASSWORD = ""
 
-INTRO_VID = 'intro_vid.mp4' # SET AS '' IF YOU DONT HAVE ONE
+INTRO_VID = ''
 OUTRO_VID = ''
 TOTAL_VID_LENGTH = 13*60
 MAX_CLIP_LENGTH = 18
@@ -57,7 +56,7 @@ def routine():
     f = open(metadataFile, "w")
     f.write(title + "\n\n")
     description = "Enjoy the memes :) \n\n" \
-    "like and subscribe to @Chewy for more \n\n" \
+    "like and subscribe to @Meme Caviar for more \n\n" \
     "The memes in the compilation are reposts from various private instagram meme accounts.\n" \
     "this episode's were from: \n"
     f.write(description)
@@ -77,24 +76,12 @@ def routine():
     description += "#memes #dankmemes #compilation #funny #funnyvideos \n\n"
     f.write(description + "\n\n")
     f.close()
-    
-    # Step 3: Upload to Youtube
-    print("Uploading to Youtube...")
-    uploadYtvid(VIDEO_FILE_NAME=outputFile,
-                title=title,
-                description=description)
-    print("Uploaded To Youtube!")
-    
-    # Step 4: Cleanup
+
+    # Step 3: Cleanup
     print("Removing temp files!")
     # Delete all files made:
     #   Folder videoDirectory
     shutil.rmtree(videoDirectory, ignore_errors=True)
-    #   File outputFile
-    try:
-        os.remove(outputFile)
-    except OSError as e:  ## if faile,d, report it back to the user ##
-        print ("Error: %s - %s." % (e.filename, e.strerror))
     print("Removed temp files!")
 
 def attemptRoutine():
@@ -111,4 +98,3 @@ schedule.every().day.at(DAILY_SCHEDULED_TIME).do(attemptRoutine)
 while True:
     schedule.run_pending()
     time.sleep(60) # wait one min
-

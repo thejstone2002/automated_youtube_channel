@@ -101,14 +101,6 @@ def makeCompilation(path = "./",
 
     #print(description)
     # Create compilation
-    finalClip.write_videofile(outputFile, threads=8, temp_audiofile=audio_path, remove_temp=True, codec="libx264", audio_codec="aac")
+    finalClip.write_videofile(outputFile, threads=12, temp_audiofile=audio_path, remove_temp=True, codec="libx264", audio_codec="aac")
 
     return description
-    
-if __name__ == "__main__":
-    makeCompilation(path = "/Users/nathanan/Documents/YOUTUBE/AutomatedChannel/Videos/Memes/",
-                    introName = "intro_vid.mp4",
-                    outroName = '',
-                    totalVidLength = 10*60,
-                    maxClipLength = 20,
-                    outputFile = "outputseq.mp4")
